@@ -1,0 +1,764 @@
+Analysis & Synthesis report for hw4
+Mon Jan 24 21:11:51 2022
+Quartus II 32-bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Port Connectivity Checks: "alu32:Alu|sub32:sub|sub_32:SUB"
+ 12. Port Connectivity Checks: "alu32:Alu"
+ 13. Port Connectivity Checks: "adder32:adder_1|adder_32:add32"
+ 14. Port Connectivity Checks: "add_1:add1|adder_32:add32|full_adder:FA31"
+ 15. Port Connectivity Checks: "add_1:add1|adder_32:add32"
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
+ 18. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                    ;
++------------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Jan 24 21:11:51 2022      ;
+; Quartus II 32-bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
+; Revision Name                      ; hw4                                        ;
+; Top-level Entity Name              ; MiniMIPS                                   ;
+; Family                             ; Cyclone IV GX                              ;
+; Total logic elements               ; 0                                          ;
+;     Total combinational functions  ; 0                                          ;
+;     Dedicated logic registers      ; 0                                          ;
+; Total registers                    ; 0                                          ;
+; Total pins                         ; 34                                         ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 0                                          ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total GXB Receiver Channel PCS     ; 0                                          ;
+; Total GXB Receiver Channel PMA     ; 0                                          ;
+; Total GXB Transmitter Channel PCS  ; 0                                          ;
+; Total GXB Transmitter Channel PMA  ; 0                                          ;
+; Total PLLs                         ; 0                                          ;
++------------------------------------+--------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                                      ; MiniMIPS           ; hw4                ;
+; Family name                                                                ; Cyclone IV GX      ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                          ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                                                            ; Library ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------------------------------------------+---------+
+; alu32.v                          ; yes             ; User Verilog HDL File  ; C:/Users/OmerF/Desktop/Okul Dersleri/331 Computer Organization/HWs/hw4/Single Cyle Processor/files/alu32.v              ;         ;
+; and32.v                          ; yes             ; User Verilog HDL File  ; C:/Users/OmerF/Desktop/Okul Dersleri/331 Computer Organization/HWs/hw4/Single Cyle Processor/files/and32.v              ;         ;
+; or32.v                           ; yes             ; User Verilog HDL File  ; C:/Users/OmerF/Desktop/Okul Dersleri/331 Computer Organization/HWs/hw4/Single Cyle Processor/files/or32.v               ;         ;
+; xor32.v                          ; yes             ; User Verilog HDL File  ; C:/Users/OmerF/Desktop/Okul Dersleri/331 Computer Organization/HWs/hw4/Single Cyle Processor/files/xor32.v              ;         ;
+; full_adder.v                     ; yes             ; User Verilog HDL File  ; C:/Users/OmerF/Desktop/Okul Dersleri/331 Computer Organization/HWs/hw4/Single Cyle Processor/files/full_adder.v         ;         ;
+; half_adder.v                     ; yes             ; User Verilog HDL File  ; C:/Users/OmerF/Desktop/Okul Dersleri/331 Computer Organization/HWs/hw4/Single Cyle Processor/files/half_adder.v         ;         ;
+; adder_32.v                       ; yes             ; User Verilog HDL File  ; C:/Users/OmerF/Desktop/Okul Dersleri/331 Computer Organization/HWs/hw4/Single Cyle Processor/files/adder_32.v           ;         ;
+; adder32.v                        ; yes             ; User Verilog HDL File  ; C:/Users/OmerF/Desktop/Okul Dersleri/331 Computer Organization/HWs/hw4/Single Cyle Processor/files/adder32.v            ;         ;
+; nor32.v                          ; yes             ; User Verilog HDL File  ; C:/Users/OmerF/Desktop/Okul Dersleri/331 Computer Organization/HWs/hw4/Single Cyle Processor/files/nor32.v              ;         ;
+; not32.v                          ; yes             ; User Verilog HDL File  ; C:/Users/OmerF/Desktop/Okul Dersleri/331 Computer Organization/HWs/hw4/Single Cyle Processor/files/not32.v              ;         ;
+; sub_32.v                         ; yes             ; User Verilog HDL File  ; C:/Users/OmerF/Desktop/Okul Dersleri/331 Computer Organization/HWs/hw4/Single Cyle Processor/files/sub_32.v             ;         ;
+; sub32.v                          ; yes             ; User Verilog HDL File  ; C:/Users/OmerF/Desktop/Okul Dersleri/331 Computer Organization/HWs/hw4/Single Cyle Processor/files/sub32.v              ;         ;
+; mux_2x1_1.v                      ; yes             ; User Verilog HDL File  ; C:/Users/OmerF/Desktop/Okul Dersleri/331 Computer Organization/HWs/hw4/Single Cyle Processor/files/mux_2x1_1.v          ;         ;
+; mux_4x1_1.v                      ; yes             ; User Verilog HDL File  ; C:/Users/OmerF/Desktop/Okul Dersleri/331 Computer Organization/HWs/hw4/Single Cyle Processor/files/mux_4x1_1.v          ;         ;
+; mux_8x1_1.v                      ; yes             ; User Verilog HDL File  ; C:/Users/OmerF/Desktop/Okul Dersleri/331 Computer Organization/HWs/hw4/Single Cyle Processor/files/mux_8x1_1.v          ;         ;
+; mux_8x1_32.v                     ; yes             ; User Verilog HDL File  ; C:/Users/OmerF/Desktop/Okul Dersleri/331 Computer Organization/HWs/hw4/Single Cyle Processor/files/mux_8x1_32.v         ;         ;
+; zero_founder.v                   ; yes             ; User Verilog HDL File  ; C:/Users/OmerF/Desktop/Okul Dersleri/331 Computer Organization/HWs/hw4/Single Cyle Processor/files/zero_founder.v       ;         ;
+; control_unit.v                   ; yes             ; User Verilog HDL File  ; C:/Users/OmerF/Desktop/Okul Dersleri/331 Computer Organization/HWs/hw4/Single Cyle Processor/files/control_unit.v       ;         ;
+; mux_2x1_3.v                      ; yes             ; User Verilog HDL File  ; C:/Users/OmerF/Desktop/Okul Dersleri/331 Computer Organization/HWs/hw4/Single Cyle Processor/files/mux_2x1_3.v          ;         ;
+; mux_2x1_32.v                     ; yes             ; User Verilog HDL File  ; C:/Users/OmerF/Desktop/Okul Dersleri/331 Computer Organization/HWs/hw4/Single Cyle Processor/files/mux_2x1_32.v         ;         ;
+; sign_extend_6to32.v              ; yes             ; User Verilog HDL File  ; C:/Users/OmerF/Desktop/Okul Dersleri/331 Computer Organization/HWs/hw4/Single Cyle Processor/files/sign_extend_6to32.v  ;         ;
+; mips_registers.v                 ; yes             ; User Verilog HDL File  ; C:/Users/OmerF/Desktop/Okul Dersleri/331 Computer Organization/HWs/hw4/Single Cyle Processor/files/mips_registers.v     ;         ;
+; mips_memory.v                    ; yes             ; User Verilog HDL File  ; C:/Users/OmerF/Desktop/Okul Dersleri/331 Computer Organization/HWs/hw4/Single Cyle Processor/files/mips_memory.v        ;         ;
+; instruction_memory.v             ; yes             ; User Verilog HDL File  ; C:/Users/OmerF/Desktop/Okul Dersleri/331 Computer Organization/HWs/hw4/Single Cyle Processor/files/instruction_memory.v ;         ;
+; program_counter.v                ; yes             ; User Verilog HDL File  ; C:/Users/OmerF/Desktop/Okul Dersleri/331 Computer Organization/HWs/hw4/Single Cyle Processor/files/program_counter.v    ;         ;
+; MiniMIPS.v                       ; yes             ; User Verilog HDL File  ; C:/Users/OmerF/Desktop/Okul Dersleri/331 Computer Organization/HWs/hw4/Single Cyle Processor/files/MiniMIPS.v           ;         ;
+; mux_2x1_2_.v                     ; yes             ; User Verilog HDL File  ; C:/Users/OmerF/Desktop/Okul Dersleri/331 Computer Organization/HWs/hw4/Single Cyle Processor/files/mux_2x1_2_.v         ;         ;
+; slt_extender.v                   ; yes             ; User Verilog HDL File  ; C:/Users/OmerF/Desktop/Okul Dersleri/331 Computer Organization/HWs/hw4/Single Cyle Processor/files/slt_extender.v       ;         ;
+; add_1.v                          ; yes             ; User Verilog HDL File  ; C:/Users/OmerF/Desktop/Okul Dersleri/331 Computer Organization/HWs/hw4/Single Cyle Processor/files/add_1.v              ;         ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary ;
++--------------------------+------------------+
+; Resource                 ; Usage            ;
++--------------------------+------------------+
+; I/O pins                 ; 34               ;
+; DSP block 9-bit elements ; 0                ;
+; Maximum fan-out node     ; result[0]~output ;
+; Maximum fan-out          ; 1                ;
+; Total fan-out            ; 34               ;
+; Average fan-out          ; 0.50             ;
++--------------------------+------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                     ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+
+; |MiniMIPS                  ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 34   ; 0            ; |MiniMIPS           ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                          ;
++----------------------------------------------------+----------------------------------------+
+; Register name                                      ; Reason for Removal                     ;
++----------------------------------------------------+----------------------------------------+
+; instruction_memory:instr_memory|instruction[0..15] ; Stuck at GND due to stuck port data_in ;
+; mips_memory:memory|read_mem[0..31]                 ; Lost fanout                            ;
+; mips_registers:Registers|registers~1               ; Stuck at GND due to stuck port data_in ;
+; mips_registers:Registers|registers~2               ; Stuck at GND due to stuck port data_in ;
+; mips_registers:Registers|registers~3               ; Stuck at GND due to stuck port data_in ;
+; mips_registers:Registers|registers~4               ; Stuck at GND due to stuck port data_in ;
+; mips_registers:Registers|registers~5               ; Stuck at GND due to stuck port data_in ;
+; mips_registers:Registers|registers~6               ; Stuck at GND due to stuck port data_in ;
+; mips_registers:Registers|registers~7               ; Stuck at GND due to stuck port data_in ;
+; mips_registers:Registers|registers~8               ; Stuck at GND due to stuck port data_in ;
+; mips_registers:Registers|registers~9               ; Stuck at GND due to stuck port data_in ;
+; mips_registers:Registers|registers~10              ; Stuck at GND due to stuck port data_in ;
+; mips_registers:Registers|registers~11              ; Stuck at GND due to stuck port data_in ;
+; mips_registers:Registers|registers~12              ; Stuck at GND due to stuck port data_in ;
+; mips_registers:Registers|registers~13              ; Stuck at GND due to stuck port data_in ;
+; mips_registers:Registers|registers~14              ; Stuck at GND due to stuck port data_in ;
+; mips_registers:Registers|registers~15              ; Stuck at GND due to stuck port data_in ;
+; mips_registers:Registers|registers~16              ; Stuck at GND due to stuck port data_in ;
+; mips_registers:Registers|registers~17              ; Stuck at GND due to stuck port data_in ;
+; mips_registers:Registers|registers~18              ; Stuck at GND due to stuck port data_in ;
+; mips_registers:Registers|registers~19              ; Stuck at GND due to stuck port data_in ;
+; mips_registers:Registers|registers~20              ; Stuck at GND due to stuck port data_in ;
+; mips_registers:Registers|registers~21              ; Stuck at GND due to stuck port data_in ;
+; mips_registers:Registers|registers~22              ; Stuck at GND due to stuck port data_in ;
+; mips_registers:Registers|registers~23              ; Stuck at GND due to stuck port data_in ;
+; mips_registers:Registers|registers~24              ; Stuck at GND due to stuck port data_in ;
+; mips_registers:Registers|registers~25              ; Stuck at GND due to stuck port data_in ;
+; mips_registers:Registers|registers~26              ; Stuck at GND due to stuck port data_in ;
+; mips_registers:Registers|registers~27              ; Stuck at GND due to stuck port data_in ;
+; mips_registers:Registers|registers~28              ; Stuck at GND due to stuck port data_in ;
+; mips_registers:Registers|registers~29              ; Stuck at GND due to stuck port data_in ;
+; mips_registers:Registers|registers~30              ; Stuck at GND due to stuck port data_in ;
+; mips_registers:Registers|registers~31              ; Stuck at GND due to stuck port data_in ;
+; mips_registers:Registers|registers~32              ; Lost fanout                            ;
+; mips_registers:Registers|registers~33              ; Lost fanout                            ;
+; mips_registers:Registers|registers~34              ; Lost fanout                            ;
+; mips_registers:Registers|registers~35              ; Lost fanout                            ;
+; mips_registers:Registers|registers~36              ; Lost fanout                            ;
+; mips_registers:Registers|registers~37              ; Lost fanout                            ;
+; mips_registers:Registers|registers~38              ; Lost fanout                            ;
+; mips_registers:Registers|registers~39              ; Lost fanout                            ;
+; mips_registers:Registers|registers~40              ; Lost fanout                            ;
+; mips_registers:Registers|registers~41              ; Lost fanout                            ;
+; mips_registers:Registers|registers~42              ; Lost fanout                            ;
+; mips_registers:Registers|registers~43              ; Lost fanout                            ;
+; mips_registers:Registers|registers~44              ; Lost fanout                            ;
+; mips_registers:Registers|registers~45              ; Lost fanout                            ;
+; mips_registers:Registers|registers~46              ; Lost fanout                            ;
+; mips_registers:Registers|registers~47              ; Lost fanout                            ;
+; mips_registers:Registers|registers~48              ; Lost fanout                            ;
+; mips_registers:Registers|registers~49              ; Lost fanout                            ;
+; mips_registers:Registers|registers~50              ; Lost fanout                            ;
+; mips_registers:Registers|registers~51              ; Lost fanout                            ;
+; mips_registers:Registers|registers~52              ; Lost fanout                            ;
+; mips_registers:Registers|registers~53              ; Lost fanout                            ;
+; mips_registers:Registers|registers~54              ; Lost fanout                            ;
+; mips_registers:Registers|registers~55              ; Lost fanout                            ;
+; mips_registers:Registers|registers~56              ; Lost fanout                            ;
+; mips_registers:Registers|registers~57              ; Lost fanout                            ;
+; mips_registers:Registers|registers~58              ; Lost fanout                            ;
+; mips_registers:Registers|registers~59              ; Lost fanout                            ;
+; mips_registers:Registers|registers~60              ; Lost fanout                            ;
+; mips_registers:Registers|registers~61              ; Lost fanout                            ;
+; mips_registers:Registers|registers~62              ; Lost fanout                            ;
+; mips_registers:Registers|registers~63              ; Lost fanout                            ;
+; mips_registers:Registers|registers~64              ; Lost fanout                            ;
+; mips_registers:Registers|registers~65              ; Lost fanout                            ;
+; mips_registers:Registers|registers~66              ; Lost fanout                            ;
+; mips_registers:Registers|registers~67              ; Lost fanout                            ;
+; mips_registers:Registers|registers~68              ; Lost fanout                            ;
+; mips_registers:Registers|registers~69              ; Lost fanout                            ;
+; mips_registers:Registers|registers~70              ; Lost fanout                            ;
+; mips_registers:Registers|registers~71              ; Lost fanout                            ;
+; mips_registers:Registers|registers~72              ; Lost fanout                            ;
+; mips_registers:Registers|registers~73              ; Lost fanout                            ;
+; mips_registers:Registers|registers~74              ; Lost fanout                            ;
+; mips_registers:Registers|registers~75              ; Lost fanout                            ;
+; mips_registers:Registers|registers~76              ; Lost fanout                            ;
+; mips_registers:Registers|registers~77              ; Lost fanout                            ;
+; mips_registers:Registers|registers~78              ; Lost fanout                            ;
+; mips_registers:Registers|registers~79              ; Lost fanout                            ;
+; mips_registers:Registers|registers~80              ; Lost fanout                            ;
+; mips_registers:Registers|registers~81              ; Lost fanout                            ;
+; mips_registers:Registers|registers~82              ; Lost fanout                            ;
+; mips_registers:Registers|registers~83              ; Lost fanout                            ;
+; mips_registers:Registers|registers~84              ; Lost fanout                            ;
+; mips_registers:Registers|registers~85              ; Lost fanout                            ;
+; mips_registers:Registers|registers~86              ; Lost fanout                            ;
+; mips_registers:Registers|registers~87              ; Lost fanout                            ;
+; mips_registers:Registers|registers~88              ; Lost fanout                            ;
+; mips_registers:Registers|registers~89              ; Lost fanout                            ;
+; mips_registers:Registers|registers~90              ; Lost fanout                            ;
+; mips_registers:Registers|registers~91              ; Lost fanout                            ;
+; mips_registers:Registers|registers~92              ; Lost fanout                            ;
+; mips_registers:Registers|registers~93              ; Lost fanout                            ;
+; mips_registers:Registers|registers~94              ; Lost fanout                            ;
+; mips_registers:Registers|registers~95              ; Lost fanout                            ;
+; mips_registers:Registers|registers~96              ; Lost fanout                            ;
+; mips_registers:Registers|registers~97              ; Lost fanout                            ;
+; mips_registers:Registers|registers~98              ; Lost fanout                            ;
+; mips_registers:Registers|registers~99              ; Lost fanout                            ;
+; mips_registers:Registers|registers~100             ; Lost fanout                            ;
+; mips_registers:Registers|registers~101             ; Lost fanout                            ;
+; mips_registers:Registers|registers~102             ; Lost fanout                            ;
+; mips_registers:Registers|registers~103             ; Lost fanout                            ;
+; mips_registers:Registers|registers~104             ; Lost fanout                            ;
+; mips_registers:Registers|registers~105             ; Lost fanout                            ;
+; mips_registers:Registers|registers~106             ; Lost fanout                            ;
+; mips_registers:Registers|registers~107             ; Lost fanout                            ;
+; mips_registers:Registers|registers~108             ; Lost fanout                            ;
+; mips_registers:Registers|registers~109             ; Lost fanout                            ;
+; mips_registers:Registers|registers~110             ; Lost fanout                            ;
+; mips_registers:Registers|registers~111             ; Lost fanout                            ;
+; mips_registers:Registers|registers~112             ; Lost fanout                            ;
+; mips_registers:Registers|registers~113             ; Lost fanout                            ;
+; mips_registers:Registers|registers~114             ; Lost fanout                            ;
+; mips_registers:Registers|registers~115             ; Lost fanout                            ;
+; mips_registers:Registers|registers~116             ; Lost fanout                            ;
+; mips_registers:Registers|registers~117             ; Lost fanout                            ;
+; mips_registers:Registers|registers~118             ; Lost fanout                            ;
+; mips_registers:Registers|registers~119             ; Lost fanout                            ;
+; mips_registers:Registers|registers~120             ; Lost fanout                            ;
+; mips_registers:Registers|registers~121             ; Lost fanout                            ;
+; mips_registers:Registers|registers~122             ; Lost fanout                            ;
+; mips_registers:Registers|registers~123             ; Lost fanout                            ;
+; mips_registers:Registers|registers~124             ; Lost fanout                            ;
+; mips_registers:Registers|registers~125             ; Lost fanout                            ;
+; mips_registers:Registers|registers~126             ; Lost fanout                            ;
+; mips_registers:Registers|registers~127             ; Lost fanout                            ;
+; mips_registers:Registers|registers~128             ; Lost fanout                            ;
+; mips_registers:Registers|registers~129             ; Lost fanout                            ;
+; mips_registers:Registers|registers~130             ; Lost fanout                            ;
+; mips_registers:Registers|registers~131             ; Lost fanout                            ;
+; mips_registers:Registers|registers~132             ; Lost fanout                            ;
+; mips_registers:Registers|registers~133             ; Lost fanout                            ;
+; mips_registers:Registers|registers~134             ; Lost fanout                            ;
+; mips_registers:Registers|registers~135             ; Lost fanout                            ;
+; mips_registers:Registers|registers~136             ; Lost fanout                            ;
+; mips_registers:Registers|registers~137             ; Lost fanout                            ;
+; mips_registers:Registers|registers~138             ; Lost fanout                            ;
+; mips_registers:Registers|registers~139             ; Lost fanout                            ;
+; mips_registers:Registers|registers~140             ; Lost fanout                            ;
+; mips_registers:Registers|registers~141             ; Lost fanout                            ;
+; mips_registers:Registers|registers~142             ; Lost fanout                            ;
+; mips_registers:Registers|registers~143             ; Lost fanout                            ;
+; mips_registers:Registers|registers~144             ; Lost fanout                            ;
+; mips_registers:Registers|registers~145             ; Lost fanout                            ;
+; mips_registers:Registers|registers~146             ; Lost fanout                            ;
+; mips_registers:Registers|registers~147             ; Lost fanout                            ;
+; mips_registers:Registers|registers~148             ; Lost fanout                            ;
+; mips_registers:Registers|registers~149             ; Lost fanout                            ;
+; mips_registers:Registers|registers~150             ; Lost fanout                            ;
+; mips_registers:Registers|registers~151             ; Lost fanout                            ;
+; mips_registers:Registers|registers~152             ; Lost fanout                            ;
+; mips_registers:Registers|registers~153             ; Lost fanout                            ;
+; mips_registers:Registers|registers~154             ; Lost fanout                            ;
+; mips_registers:Registers|registers~155             ; Lost fanout                            ;
+; mips_registers:Registers|registers~156             ; Lost fanout                            ;
+; mips_registers:Registers|registers~157             ; Lost fanout                            ;
+; mips_registers:Registers|registers~158             ; Lost fanout                            ;
+; mips_registers:Registers|registers~159             ; Lost fanout                            ;
+; mips_registers:Registers|registers~160             ; Lost fanout                            ;
+; mips_registers:Registers|registers~161             ; Lost fanout                            ;
+; mips_registers:Registers|registers~162             ; Lost fanout                            ;
+; mips_registers:Registers|registers~163             ; Lost fanout                            ;
+; mips_registers:Registers|registers~164             ; Lost fanout                            ;
+; mips_registers:Registers|registers~165             ; Lost fanout                            ;
+; mips_registers:Registers|registers~166             ; Lost fanout                            ;
+; mips_registers:Registers|registers~167             ; Lost fanout                            ;
+; mips_registers:Registers|registers~168             ; Lost fanout                            ;
+; mips_registers:Registers|registers~169             ; Lost fanout                            ;
+; mips_registers:Registers|registers~170             ; Lost fanout                            ;
+; mips_registers:Registers|registers~171             ; Lost fanout                            ;
+; mips_registers:Registers|registers~172             ; Lost fanout                            ;
+; mips_registers:Registers|registers~173             ; Lost fanout                            ;
+; mips_registers:Registers|registers~174             ; Lost fanout                            ;
+; mips_registers:Registers|registers~175             ; Lost fanout                            ;
+; mips_registers:Registers|registers~176             ; Lost fanout                            ;
+; mips_registers:Registers|registers~177             ; Lost fanout                            ;
+; mips_registers:Registers|registers~178             ; Lost fanout                            ;
+; mips_registers:Registers|registers~179             ; Lost fanout                            ;
+; mips_registers:Registers|registers~180             ; Lost fanout                            ;
+; mips_registers:Registers|registers~181             ; Lost fanout                            ;
+; mips_registers:Registers|registers~182             ; Lost fanout                            ;
+; mips_registers:Registers|registers~183             ; Lost fanout                            ;
+; mips_registers:Registers|registers~184             ; Lost fanout                            ;
+; mips_registers:Registers|registers~185             ; Lost fanout                            ;
+; mips_registers:Registers|registers~186             ; Lost fanout                            ;
+; mips_registers:Registers|registers~187             ; Lost fanout                            ;
+; mips_registers:Registers|registers~188             ; Lost fanout                            ;
+; mips_registers:Registers|registers~189             ; Lost fanout                            ;
+; mips_registers:Registers|registers~190             ; Lost fanout                            ;
+; mips_registers:Registers|registers~191             ; Lost fanout                            ;
+; mips_registers:Registers|registers~192             ; Lost fanout                            ;
+; mips_registers:Registers|registers~193             ; Lost fanout                            ;
+; mips_registers:Registers|registers~194             ; Lost fanout                            ;
+; mips_registers:Registers|registers~195             ; Lost fanout                            ;
+; mips_registers:Registers|registers~196             ; Lost fanout                            ;
+; mips_registers:Registers|registers~197             ; Lost fanout                            ;
+; mips_registers:Registers|registers~198             ; Lost fanout                            ;
+; mips_registers:Registers|registers~199             ; Lost fanout                            ;
+; mips_registers:Registers|registers~200             ; Lost fanout                            ;
+; mips_registers:Registers|registers~201             ; Lost fanout                            ;
+; mips_registers:Registers|registers~202             ; Lost fanout                            ;
+; mips_registers:Registers|registers~203             ; Lost fanout                            ;
+; mips_registers:Registers|registers~204             ; Lost fanout                            ;
+; mips_registers:Registers|registers~205             ; Lost fanout                            ;
+; mips_registers:Registers|registers~206             ; Lost fanout                            ;
+; mips_registers:Registers|registers~207             ; Lost fanout                            ;
+; mips_registers:Registers|registers~208             ; Lost fanout                            ;
+; mips_registers:Registers|registers~209             ; Lost fanout                            ;
+; mips_registers:Registers|registers~210             ; Lost fanout                            ;
+; mips_registers:Registers|registers~211             ; Lost fanout                            ;
+; mips_registers:Registers|registers~212             ; Lost fanout                            ;
+; mips_registers:Registers|registers~213             ; Lost fanout                            ;
+; mips_registers:Registers|registers~214             ; Lost fanout                            ;
+; mips_registers:Registers|registers~215             ; Lost fanout                            ;
+; mips_registers:Registers|registers~216             ; Lost fanout                            ;
+; mips_registers:Registers|registers~217             ; Lost fanout                            ;
+; mips_registers:Registers|registers~218             ; Lost fanout                            ;
+; mips_registers:Registers|registers~219             ; Lost fanout                            ;
+; mips_registers:Registers|registers~220             ; Lost fanout                            ;
+; mips_registers:Registers|registers~221             ; Lost fanout                            ;
+; mips_registers:Registers|registers~222             ; Lost fanout                            ;
+; mips_registers:Registers|registers~223             ; Lost fanout                            ;
+; mips_registers:Registers|registers~224             ; Lost fanout                            ;
+; mips_registers:Registers|registers~225             ; Lost fanout                            ;
+; mips_registers:Registers|registers~226             ; Lost fanout                            ;
+; mips_registers:Registers|registers~227             ; Lost fanout                            ;
+; mips_registers:Registers|registers~228             ; Lost fanout                            ;
+; mips_registers:Registers|registers~229             ; Lost fanout                            ;
+; mips_registers:Registers|registers~230             ; Lost fanout                            ;
+; mips_registers:Registers|registers~231             ; Lost fanout                            ;
+; mips_registers:Registers|registers~232             ; Lost fanout                            ;
+; mips_registers:Registers|registers~233             ; Lost fanout                            ;
+; mips_registers:Registers|registers~234             ; Lost fanout                            ;
+; mips_registers:Registers|registers~235             ; Lost fanout                            ;
+; mips_registers:Registers|registers~236             ; Lost fanout                            ;
+; mips_registers:Registers|registers~237             ; Lost fanout                            ;
+; mips_registers:Registers|registers~238             ; Lost fanout                            ;
+; mips_registers:Registers|registers~239             ; Lost fanout                            ;
+; mips_registers:Registers|registers~240             ; Lost fanout                            ;
+; mips_registers:Registers|registers~241             ; Lost fanout                            ;
+; mips_registers:Registers|registers~242             ; Lost fanout                            ;
+; mips_registers:Registers|registers~243             ; Lost fanout                            ;
+; mips_registers:Registers|registers~244             ; Lost fanout                            ;
+; mips_registers:Registers|registers~245             ; Lost fanout                            ;
+; mips_registers:Registers|registers~246             ; Lost fanout                            ;
+; mips_registers:Registers|registers~247             ; Lost fanout                            ;
+; mips_registers:Registers|registers~248             ; Lost fanout                            ;
+; mips_registers:Registers|registers~249             ; Lost fanout                            ;
+; mips_registers:Registers|registers~250             ; Lost fanout                            ;
+; mips_registers:Registers|registers~251             ; Lost fanout                            ;
+; mips_registers:Registers|registers~252             ; Lost fanout                            ;
+; mips_registers:Registers|registers~253             ; Lost fanout                            ;
+; mips_registers:Registers|registers~254             ; Lost fanout                            ;
+; mips_registers:Registers|registers~255             ; Lost fanout                            ;
+; mips_registers:Registers|registers~0               ; Stuck at VCC due to stuck port data_in ;
+; Total Number of Removed Registers = 304            ;                                        ;
++----------------------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                    ;
++------------------------------------------------+---------------------------+-------------------------------------------------------------------+
+; Register name                                  ; Reason for Removal        ; Registers Removed due to This Register                            ;
++------------------------------------------------+---------------------------+-------------------------------------------------------------------+
+; instruction_memory:instr_memory|instruction[2] ; Stuck at GND              ; mips_memory:memory|read_mem[31], mips_memory:memory|read_mem[30], ;
+;                                                ; due to stuck port data_in ; mips_memory:memory|read_mem[29], mips_memory:memory|read_mem[28], ;
+;                                                ;                           ; mips_memory:memory|read_mem[27], mips_memory:memory|read_mem[26], ;
+;                                                ;                           ; mips_memory:memory|read_mem[25], mips_memory:memory|read_mem[24], ;
+;                                                ;                           ; mips_memory:memory|read_mem[23], mips_memory:memory|read_mem[22], ;
+;                                                ;                           ; mips_memory:memory|read_mem[21], mips_memory:memory|read_mem[20], ;
+;                                                ;                           ; mips_memory:memory|read_mem[19], mips_memory:memory|read_mem[18], ;
+;                                                ;                           ; mips_memory:memory|read_mem[17], mips_memory:memory|read_mem[16], ;
+;                                                ;                           ; mips_memory:memory|read_mem[15], mips_memory:memory|read_mem[14], ;
+;                                                ;                           ; mips_memory:memory|read_mem[13], mips_memory:memory|read_mem[12], ;
+;                                                ;                           ; mips_memory:memory|read_mem[11], mips_memory:memory|read_mem[10], ;
+;                                                ;                           ; mips_memory:memory|read_mem[9], mips_memory:memory|read_mem[8],   ;
+;                                                ;                           ; mips_memory:memory|read_mem[7], mips_memory:memory|read_mem[6],   ;
+;                                                ;                           ; mips_memory:memory|read_mem[5], mips_memory:memory|read_mem[3],   ;
+;                                                ;                           ; mips_memory:memory|read_mem[0]                                    ;
+; instruction_memory:instr_memory|instruction[9] ; Stuck at GND              ; mips_memory:memory|read_mem[2], mips_memory:memory|read_mem[1]    ;
+;                                                ; due to stuck port data_in ;                                                                   ;
++------------------------------------------------+---------------------------+-------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------+
+; Port Connectivity Checks: "alu32:Alu|sub32:sub|sub_32:SUB" ;
++---------+-------+----------+-------------------------------+
+; Port    ; Type  ; Severity ; Details                       ;
++---------+-------+----------+-------------------------------+
+; CarryIn ; Input ; Info     ; Stuck at VCC                  ;
++---------+-------+----------+-------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "alu32:Alu"                                                                              ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; OverFlow ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------+
+; Port Connectivity Checks: "adder32:adder_1|adder_32:add32" ;
++---------+-------+----------+-------------------------------+
+; Port    ; Type  ; Severity ; Details                       ;
++---------+-------+----------+-------------------------------+
+; CarryIn ; Input ; Info     ; Stuck at GND                  ;
++---------+-------+----------+-------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "add_1:add1|adder_32:add32|full_adder:FA31"                                               ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; carry_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------+
+; Port Connectivity Checks: "add_1:add1|adder_32:add32" ;
++----------+-------+----------+-------------------------+
+; Port     ; Type  ; Severity ; Details                 ;
++----------+-------+----------+-------------------------+
+; B[31..1] ; Input ; Info     ; Stuck at GND            ;
+; B[0]     ; Input ; Info     ; Stuck at VCC            ;
+; CarryIn  ; Input ; Info     ; Stuck at GND            ;
++----------+-------+----------+-------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 32-bit Analysis & Synthesis
+    Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+    Info: Processing started: Mon Jan 24 21:11:46 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off hw4 -c hw4
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file alu32.v
+    Info (12023): Found entity 1: alu32
+Info (12021): Found 1 design units, including 1 entities, in source file and32.v
+    Info (12023): Found entity 1: and32
+Info (12021): Found 1 design units, including 1 entities, in source file or32.v
+    Info (12023): Found entity 1: or32
+Info (12021): Found 1 design units, including 1 entities, in source file xor32.v
+    Info (12023): Found entity 1: xor32
+Info (12021): Found 1 design units, including 1 entities, in source file full_adder.v
+    Info (12023): Found entity 1: full_adder
+Info (12021): Found 1 design units, including 1 entities, in source file half_adder.v
+    Info (12023): Found entity 1: half_adder
+Info (12021): Found 1 design units, including 1 entities, in source file adder_32.v
+    Info (12023): Found entity 1: adder_32
+Info (12021): Found 1 design units, including 1 entities, in source file adder32.v
+    Info (12023): Found entity 1: adder32
+Info (12021): Found 1 design units, including 1 entities, in source file nor32.v
+    Info (12023): Found entity 1: nor32
+Info (12021): Found 1 design units, including 1 entities, in source file not32.v
+    Info (12023): Found entity 1: not32
+Info (12021): Found 1 design units, including 1 entities, in source file sub_32.v
+    Info (12023): Found entity 1: sub_32
+Info (12021): Found 1 design units, including 1 entities, in source file sub32.v
+    Info (12023): Found entity 1: sub32
+Info (12021): Found 1 design units, including 1 entities, in source file mux_2x1_1.v
+    Info (12023): Found entity 1: mux_2x1_1
+Info (12021): Found 1 design units, including 1 entities, in source file mux_4x1_1.v
+    Info (12023): Found entity 1: mux_4x1_1
+Info (12021): Found 1 design units, including 1 entities, in source file mux_8x1_1.v
+    Info (12023): Found entity 1: mux_8x1_1
+Info (12021): Found 1 design units, including 1 entities, in source file mux_8x1_32.v
+    Info (12023): Found entity 1: mux_8x1_32
+Info (12021): Found 1 design units, including 1 entities, in source file deneme.v
+    Info (12023): Found entity 1: deneme
+Info (12021): Found 1 design units, including 1 entities, in source file zero_founder.v
+    Info (12023): Found entity 1: zero_founder
+Info (12021): Found 1 design units, including 1 entities, in source file control_unit.v
+    Info (12023): Found entity 1: control_unit
+Info (12021): Found 1 design units, including 1 entities, in source file mux_3x1_2.v
+    Info (12023): Found entity 1: mux_3x1_2
+Info (12021): Found 1 design units, including 1 entities, in source file mux_2x1_3.v
+    Info (12023): Found entity 1: mux_2x1_3
+Info (12021): Found 1 design units, including 1 entities, in source file mux_2x1_32.v
+    Info (12023): Found entity 1: mux_2x1_32
+Info (12021): Found 1 design units, including 1 entities, in source file sign_extend_6to32.v
+    Info (12023): Found entity 1: sign_extend_6to32
+Info (12021): Found 1 design units, including 1 entities, in source file mips_registers.v
+    Info (12023): Found entity 1: mips_registers
+Info (12021): Found 1 design units, including 1 entities, in source file minimips_testbench.v
+    Info (12023): Found entity 1: MiniMIPS_testbench
+Info (12021): Found 1 design units, including 1 entities, in source file mips_memory.v
+    Info (12023): Found entity 1: mips_memory
+Info (12021): Found 1 design units, including 1 entities, in source file instruction_memory.v
+    Info (12023): Found entity 1: instruction_memory
+Info (12021): Found 1 design units, including 1 entities, in source file alu32_tb.v
+    Info (12023): Found entity 1: alu32_tb
+Info (12021): Found 1 design units, including 1 entities, in source file mips_registers_tb.v
+    Info (12023): Found entity 1: mips_registers_tb
+Info (12021): Found 1 design units, including 1 entities, in source file mips_memory_tb.v
+    Info (12023): Found entity 1: mips_memory_tb
+Info (12021): Found 1 design units, including 1 entities, in source file control_unit_tb.v
+    Info (12023): Found entity 1: control_unit_tb
+Info (12021): Found 1 design units, including 1 entities, in source file instruction_memory_tb.v
+    Info (12023): Found entity 1: instruction_memory_tb
+Info (12021): Found 1 design units, including 1 entities, in source file program_counter.v
+    Info (12023): Found entity 1: program_counter
+Info (12021): Found 1 design units, including 1 entities, in source file minimips.v
+    Info (12023): Found entity 1: MiniMIPS
+Info (12021): Found 1 design units, including 1 entities, in source file mux_2x1_2_.v
+    Info (12023): Found entity 1: mux_2x1_2_
+Info (12021): Found 1 design units, including 1 entities, in source file slt_extender.v
+    Info (12023): Found entity 1: slt_extender
+Info (12021): Found 1 design units, including 1 entities, in source file add_1.v
+    Info (12023): Found entity 1: add_1
+Info (12127): Elaborating entity "MiniMIPS" for the top level hierarchy
+Info (12128): Elaborating entity "program_counter" for hierarchy "program_counter:pc"
+Info (12128): Elaborating entity "instruction_memory" for hierarchy "instruction_memory:instr_memory"
+Warning (10858): Verilog HDL warning at instruction_memory.v(8): object Mem used but never assigned
+Info (12128): Elaborating entity "add_1" for hierarchy "add_1:add1"
+Info (12128): Elaborating entity "adder_32" for hierarchy "add_1:add1|adder_32:add32"
+Info (12128): Elaborating entity "full_adder" for hierarchy "add_1:add1|adder_32:add32|full_adder:FA0"
+Info (12128): Elaborating entity "half_adder" for hierarchy "add_1:add1|adder_32:add32|full_adder:FA0|half_adder:first_sum"
+Info (12128): Elaborating entity "adder32" for hierarchy "adder32:adder_1"
+Info (12128): Elaborating entity "mux_2x1_32" for hierarchy "mux_2x1_32:mux32_5"
+Info (12128): Elaborating entity "mux_2x1_1" for hierarchy "mux_2x1_32:mux32_5|mux_2x1_1:m0"
+Info (12128): Elaborating entity "control_unit" for hierarchy "control_unit:main_control_unit"
+Info (12128): Elaborating entity "mux_2x1_3" for hierarchy "mux_2x1_3:mux_rd"
+Info (12128): Elaborating entity "mips_registers" for hierarchy "mips_registers:Registers"
+Info (12128): Elaborating entity "mux_2x1_2_" for hierarchy "mux_2x1_2_:control_mux"
+Info (12128): Elaborating entity "sign_extend_6to32" for hierarchy "sign_extend_6to32:sign_extend_imm_32"
+Info (12128): Elaborating entity "alu32" for hierarchy "alu32:Alu"
+Info (12128): Elaborating entity "and32" for hierarchy "alu32:Alu|and32:and_32"
+Info (12128): Elaborating entity "sub32" for hierarchy "alu32:Alu|sub32:sub"
+Info (12128): Elaborating entity "sub_32" for hierarchy "alu32:Alu|sub32:sub|sub_32:SUB"
+Info (12128): Elaborating entity "not32" for hierarchy "alu32:Alu|sub32:sub|sub_32:SUB|not32:nott32"
+Info (12128): Elaborating entity "xor32" for hierarchy "alu32:Alu|xor32:xor_32"
+Info (12128): Elaborating entity "nor32" for hierarchy "alu32:Alu|nor32:nor_32"
+Info (12128): Elaborating entity "or32" for hierarchy "alu32:Alu|or32:or_32"
+Info (12128): Elaborating entity "mux_8x1_32" for hierarchy "alu32:Alu|mux_8x1_32:mux_8x1_32bit"
+Info (12128): Elaborating entity "mux_8x1_1" for hierarchy "alu32:Alu|mux_8x1_32:mux_8x1_32bit|mux_8x1_1:m8_0"
+Info (12128): Elaborating entity "mux_4x1_1" for hierarchy "alu32:Alu|mux_8x1_32:mux_8x1_32bit|mux_8x1_1:m8_0|mux_4x1_1:m4_0"
+Info (12128): Elaborating entity "zero_founder" for hierarchy "alu32:Alu|zero_founder:Z0"
+Info (12128): Elaborating entity "mips_memory" for hierarchy "mips_memory:memory"
+Info (12128): Elaborating entity "slt_extender" for hierarchy "slt_extender:slt_extenders"
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276004): RAM logic "mips_registers:Registers|registers" is uninferred due to inappropriate RAM size
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "result[0]" is stuck at VCC
+    Warning (13410): Pin "result[1]" is stuck at GND
+    Warning (13410): Pin "result[2]" is stuck at GND
+    Warning (13410): Pin "result[3]" is stuck at GND
+    Warning (13410): Pin "result[4]" is stuck at GND
+    Warning (13410): Pin "result[5]" is stuck at GND
+    Warning (13410): Pin "result[6]" is stuck at GND
+    Warning (13410): Pin "result[7]" is stuck at GND
+    Warning (13410): Pin "result[8]" is stuck at GND
+    Warning (13410): Pin "result[9]" is stuck at GND
+    Warning (13410): Pin "result[10]" is stuck at GND
+    Warning (13410): Pin "result[11]" is stuck at GND
+    Warning (13410): Pin "result[12]" is stuck at GND
+    Warning (13410): Pin "result[13]" is stuck at GND
+    Warning (13410): Pin "result[14]" is stuck at GND
+    Warning (13410): Pin "result[15]" is stuck at GND
+    Warning (13410): Pin "result[16]" is stuck at GND
+    Warning (13410): Pin "result[17]" is stuck at GND
+    Warning (13410): Pin "result[18]" is stuck at GND
+    Warning (13410): Pin "result[19]" is stuck at GND
+    Warning (13410): Pin "result[20]" is stuck at GND
+    Warning (13410): Pin "result[21]" is stuck at GND
+    Warning (13410): Pin "result[22]" is stuck at GND
+    Warning (13410): Pin "result[23]" is stuck at GND
+    Warning (13410): Pin "result[24]" is stuck at GND
+    Warning (13410): Pin "result[25]" is stuck at GND
+    Warning (13410): Pin "result[26]" is stuck at GND
+    Warning (13410): Pin "result[27]" is stuck at GND
+    Warning (13410): Pin "result[28]" is stuck at GND
+    Warning (13410): Pin "result[29]" is stuck at GND
+    Warning (13410): Pin "result[30]" is stuck at GND
+    Warning (13410): Pin "result[31]" is stuck at GND
+Info (17049): 256 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/OmerF/Desktop/Okul Dersleri/331 Computer Organization/HWs/hw4/Single Cyle Processor/files/output_files/hw4.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "clk2"
+    Warning (15610): No output dependent on input pin "clk"
+Info (21057): Implemented 34 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 32 output pins
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 38 warnings
+    Info: Peak virtual memory: 432 megabytes
+    Info: Processing ended: Mon Jan 24 21:11:51 2022
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:04
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/OmerF/Desktop/Okul Dersleri/331 Computer Organization/HWs/hw4/Single Cyle Processor/files/output_files/hw4.map.smsg.
+
+

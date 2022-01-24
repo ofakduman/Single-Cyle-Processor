@@ -1,0 +1,8 @@
+Info (10281): Verilog HDL Declaration information at alu32.v(8): object "n1" differs only in case from object "N1" in the same scope
+Info (10281): Verilog HDL Declaration information at alu32.v(8): object "n2" differs only in case from object "N2" in the same scope
+Info (10281): Verilog HDL Declaration information at alu32.v(8): object "n3" differs only in case from object "N3" in the same scope
+Info (10281): Verilog HDL Declaration information at alu32.v(8): object "ov1" differs only in case from object "OV1" in the same scope
+Info (10281): Verilog HDL Declaration information at alu32.v(8): object "ov2" differs only in case from object "OV2" in the same scope
+Info (10281): Verilog HDL Declaration information at half_adder.v(2): object "a" differs only in case from object "A" in the same scope
+Info (10281): Verilog HDL Declaration information at control_unit.v(3): object "Slti" differs only in case from object "SLTI" in the same scope
+Info (10281): Verilog HDL Declaration information at control_unit.v(4): object "ANDI" differs only in case from object "andi" in the same scope
