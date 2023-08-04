@@ -1,88 +1,63 @@
-# Single Cycle Processor Design: MiniMIPS
+# Final Project Documentation - Single Cycle Processor Design - MiniMIPS
 
-This project revolves around the implementation of a single cycle processor using a minimalistic version of the MIPS architecture, referred to as MiniMIPS. The main components involved in this design include the Instruction memory, Control unit, Registers, Data memory, Arithmetic Logic Unit (ALU), Program Counter (PC), along with several other components such as adders, multiplexers, sign extenders etc.
+## Overview
 
-## How it works
+In this project, we aim to design a small version of the MIPS processor called MiniMIPS. This processor uses a single-cycle design and the codebase consists mainly of structural or dataflow Verilog. There are seven main components: Instruction memory, Control unit, Registers, Data memory, ALU, PC, and some additional components like adders, multiplexers, and sign extenders. The MiniMIPS uses 16-bit wide instructions and has 8 registers, each holding 32-bit numbers.
 
-In designing this single cycle processor, every component was initially diagrammed and implemented. After this, testbenches were written to identify any issues. Once problems were discovered, the components were retested until the overall functionality was deemed satisfactory.
+## Instruction Set
 
-1. **Control Unit**: The control unit manages the flow of data within the processor, regulating the functioning of other components based on the instruction opcode. The control unit outputs AluOp signals and a RegDst signal to determine if it is an R-type instruction. These signals are muxed with the last 3 bits of the instruction, eliminating the need for an ALU control and thereby simplifying the design.
+The MiniMIPS features two types of instructions: R’-type and I’-type. The instruction types are structured as follows:
 
-2. **ALU**: The Arithmetic Logic Unit performs a variety of arithmetic and logic operations as determined by the control unit's AluOp signals.
+R’-type: `Op (4bits) Rs (3bits) Rt (3bits) Rd(3bits) Func(3bits)`
 
-3. **Registers**: The register file stores data that can be accessed and manipulated during the execution of instructions.
+I’-type: `Op (4bits) Rs (3bits) Rt (3bits) Imm (10bits)`
 
-4. **Instruction Memory**: The instruction memory stores the instructions to be executed by the processor.
+The following instructions are supported:
 
-5. **Data Memory**: The data memory stores the data required for the execution of instructions.
+- AND
+- ADD
+- SUB
+- XOR
+- NOR
+- OR
+- ADDI
+- ANDI
+- ORI
+- NORI
+- BEQ
+- BNE
+- SLTI
+- LW
+- SW
 
-One point of consideration is that for the 'lw' instructions, the correct result isn't obtained at the end of 1 clock cycle. This seems to be related to the clock design, but it was addressed by repeating the instruction processing.
+## Components
 
-Below is a schematic breakdown of the main components and their connections:
+### Control Unit
 
-```
-control_unit:main_control_unit
-    opcode[3..0]
-    RegDst
-    Branch
-    Bneq
-    MemRead
-    MemtoReg
-    AluOp2
-    AluOp1
-    AluOp0
-    MemWrite
-    AluSrc
-    RegWrite Slti
+The control unit deciphers the instruction opcode and controls the ALU operations and other component behaviors based on this deciphered opcode. Our design has been enhanced by muxing the instruction's last 3 bits with the RegDst signal to determine if the operation is an R-type operation and control the AluOp signals from the control unit itself, eliminating the need for a separate ALU control.
 
-alu32:Alu
-    Aluop2
-    Aluop1
-    Aluop0
-    a[31..0] b[31..0]
-    Zero0
-    res[31..0]
+### ALU
 
-mips_memory:memory
-    signal_mem_write
-    signal_mem_read
-    clk
-    write_data_address[31..0] write_data[31..0]
-    read_mem[31..0] 
+The Arithmetic Logic Unit performs arithmetic and logic operations as determined by the control unit.
 
-mips_registers:Registers
-    signal_reg_write
-    clk
-    write_data[31..0]
-    read_reg_1[2..0]
-    read_reg_2[2..0]
-    write_reg[2..0]
-    read_data_1[31..0]
-    read_data_2[31..0]
+### Registers
 
-instruction_memory:instr_memory
-    clock
-    readAddress[31..0]
-    instruction[15..0]
+There are 8 registers each holding 32-bit numbers.
 
-program_counter:pc
-    clk
-    in[31..0]
-    out[31..0]
+### Instruction Memory
 
-sign_extend_6to32:sign_extend_imm_32
-    imm[5..0] Ext[31..0]
-    clk2
-    result[31..0]
+Instruction Memory holds the instructions to be processed.
 
-Additional components include several 2:1 multiplexers, adders, and sign extenders.
-```
+### Data Memory
 
-## Project Creator
+Data Memory holds the data to be processed.
 
-Ömer F. Akduman
-1801042094
+## Design & Testing
 
-## Final Remarks
+The design process involved drafting each component and their connections, followed by writing testbenches for each component to identify and rectify problems. While the MiniMIPS single cycle processor is operational, there was a challenge when proceeding with 'lw' instructions as the correct result wasn't accessible at the end of 1 clock. This problem, suspected to be a clock design issue, was handled by repeating instruction processing.
 
-The final implementation of the MiniMIPS single cycle processor is functional with a minor consideration for the 'lw' instructions. The design and testing methodology allowed for a systematic approach to problem-solving, contributing to the successful completion of the project.
+The testing procedure includes writing a testbench module for each component and presenting the testbench results. For the MiniMIPS part, it is required to try at least two different numbers for all operations.
+
+## Conclusion
+
+While there are areas for improvement in clock design, the MiniMIPS single cycle processor offers a simplified model for understanding processor operations and design. Further enhancements can be made to this model by expanding the instruction set, adding more components, or transitioning to a multi-cycle design.
